@@ -39,5 +39,16 @@ import geopandas as gpd
 gpd.read_file('shanghai_region/shanghai_boundary.shp',encoding='gbk')  
 </pre>
 
-##
-We hope this repository helps to further research in the field of electric vehicle charging behavior. Please cite our paper if you find this code useful in your research.
+## citation
+We hope this repository helps to further research in the field of electric vehicle charging behavior. To cite the work use the following bibtex:
+
+<pre>
+@article{your_paper_id,
+  title={Gibbs Sampling for Probabilistic Generation of Electric Vehicle Charging Data},
+  author={Your Name and Collaborators},
+  journal={The Journal where the paper was published},
+  year={Year of publication}
+}
+</pre>
+
+
