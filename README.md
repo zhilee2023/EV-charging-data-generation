@@ -35,6 +35,7 @@ We also provide detailed boundary and information about 251 regions in Shanghai.
 
 <pre>
 import geopandas as gpd
+
 gpd.read_file('shanghai_region/shanghai_boundary.shp',encoding='gbk')  
 </pre>
 
