@@ -38,7 +38,7 @@ for i in range (len(model_name)):
 sample_size=2048*32
 step=100
 batch_num=25
-
+battery_label={35.0: 0, 48.3: 1, 25.0: 2, 37.8: 3, 22.0: 4}
 
 ##initialize the samples
 samples=np.zeros((0,len(features)))
