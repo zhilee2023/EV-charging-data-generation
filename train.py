@@ -34,4 +34,32 @@ p_month=Discrete1(f1_num,hidden_size1,hidden_size2,12,embedding_num,6).to(device
 p_location=Discrete2(f2_num,hidden_size1,hidden_size2,loc_num,7).to(device)
 nets=[p_ssoc,p_end_soc,p_shour,p_duration,p_battery,p_vlabel,p_month,p_location]
 optimizers = [optim.Adam(i.parameters(), lr=learning_rate) for i in nets]
-schedulers = [lr_scheduler.LinearLR(op, start_factor=1.0, end_factor=0.5, total_iters=30)  for op in optimizers]
+schedulers = [lr_scheduler.LinearLR(op, start_factor=1.0, end_factor=0.5, total_iters=50)  for op in optimizers]
+
+
+train_losses=[]
+for epoch in range(num_epochs):
+    avg=[]
+    b=0
+    for item in dataloader:
+        item=item.to(torch.float32).to(device)
+        [op.zero_grad()  for op in optimizers]
+        loss=[net(item)[1]  for net in nets]
+        [l.backward()   for l in loss]
+        [op.step() for op in optimizers]
+        avg.append([l.item() for l in loss])
+        b+=1
+    [scheduler.step() for scheduler in schedulers]
+    avg=np.array(avg)
+    l=np.mean(avg,0)
+    train_losses.append(l)
+    print(epoch, l)
+np.save('loss.npy',np.array(train_losses))
+print('batch_num: '+str(b))
+
+model_name=['p_ssoc','p_end_soc','p_shour','p_duration','p_battery_capacity','p_vlabel','p_month','p_location']
+t=datetime.now().strftime('%Y-%m-%d-%H-%M')
+for i in range (len(features)):
+    model=nets[i]
+    path="models/"+model_name[i]+"_new_beta_"+t+".pt"
+    torch.save(model, path)
