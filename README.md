@@ -30,7 +30,7 @@ python conditional_data_gen.py
 
 In conditional generation, specify the conditioning variables while running the script. More details can be found in the script's comments.
 
-## Geo index
+## Geo Index
 We also provide detailed boundary and information about 251 regions in Shanghai. You can visualize these regions using the provided script:
 
 <pre>
@@ -38,8 +38,10 @@ import geopandas as gpd
 
 gpd.read_file('shanghai_region/shanghai_boundary.shp',encoding='gbk')  
 </pre>
+## Comparative analysis
+We have facilitated a comparison between two baseline models and the Gibbs+NN model. To conduct this comparison, one can directly access the 'Comparative analysis' folder. By modifying the parameters in the 'train.py' file, the code will execute the model training. Upon completion, it will output two metrics and a JSON file containing the parameters, as well as a CSV file consisting of 200,000 samples collected by the corresponding model.
 
-## citation
+## Citation
 We hope this repository helps to further research in the field of electric vehicle charging behavior. To cite the work use the following bibtex:
 
 <pre>
