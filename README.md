@@ -38,7 +38,7 @@ import geopandas as gpd
 
 gpd.read_file('shanghai_region/shanghai_boundary.shp',encoding='gbk')  
 </pre>
-## Comparative analysis
+## Comparative Analysis
 We have facilitated a comparison between two baseline models and the Gibbs+NN model. To conduct this comparison, one can directly access the 'Comparative analysis' folder. By modifying the parameters in the 'train.py' file, the code will execute the model training. Upon completion, it will output two metrics and a JSON file containing the parameters, as well as a CSV file consisting of 200,000 samples collected by the corresponding model.
 
 ## Citation
