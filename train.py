@@ -33,8 +33,8 @@ dataloader = torch.utils.data.DataLoader(dataset, batch_size=batch_size,shuffle=
 #Define conditional probability model
 p_ssoc=Beta(f1_num,hidden_size1,hidden_size2,1,embedding_num,0).to(device)
 p_end_soc=Beta(f1_num,hidden_size1,hidden_size2,1,embedding_num,1).to(device)
-p_shour=GMM(f1_num,hidden_size1,hidden_size2,6,embedding_num,2).to(device)
-p_duration=GMM(f1_num,hidden_size1,hidden_size2,2,embedding_num,3).to(device)
+p_shour=GMM(f1_num,hidden_size1,hidden_size2,5,embedding_num,2).to(device)
+p_duration=GMM(f1_num,hidden_size1,hidden_size2,5,embedding_num,3).to(device)
 p_battery=Discrete1(f1_num,hidden_size1,hidden_size2,len(df['Battery capacity'].unique()),embedding_num,4).to(device)
 p_vlabel=Discrete1(f1_num,hidden_size1,hidden_size2,2,embedding_num,5).to(device)
 p_month=Discrete1(f1_num,hidden_size1,hidden_size2,12,embedding_num,6).to(device)
