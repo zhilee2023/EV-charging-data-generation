@@ -152,7 +152,7 @@ def bayes_train(layer,hidden_size,n_comp,beta_func):
             distribution_wasserstein.append(kl_div)
     
     result_summary=dict(zip(features,distribution_wasserstein))
-    #result_summary['privacy_loss']=privacy_loss(train_dataset[:,sorted_index],sampling.to_numpy(),test_dataset[:,sorted_index])
+    result_summary['privacy_loss']=privacy_loss(train_dataset[:,sorted_index],sampling.to_numpy(),test_dataset[:,sorted_index])
 
     result_summary['sample_mean_diff'] = dict(zip(features, [float(v) for v in sample_mean]))
     result_summary['data_diff'] = dict(zip(features, [float(v) for v in true_mean]))
