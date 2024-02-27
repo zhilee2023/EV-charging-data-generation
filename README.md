@@ -1,5 +1,5 @@
 # EV-charging-data-generation
-This repository contains the code for our research paper titled "Gibbs Sampling for Probabilistic Generation of Electric Vehicle Charging Data".
+This repository contains the code for our research paper titled "Synthesis of Electric Vehicle Charging Data: A Real-World Data-Driven Approach".
 
 ## Dependencies
 The main dependencies are PyTorch (1.13.1+cu116) and GeoPandas (0.10.2).
