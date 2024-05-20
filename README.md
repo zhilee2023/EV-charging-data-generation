@@ -45,11 +45,14 @@ We have facilitated a comparison between two baseline models and the Gibbs+NN mo
 We hope this repository helps to further research in the field of electric vehicle charging behavior. To cite the work use the following bibtex:
 
 <pre>
-@article{your_paper_id,
-  title={Gibbs Sampling for Probabilistic Generation of Electric Vehicle Charging Data},
-  author={Your Name and Collaborators},
-  journal={The Journal where the paper was published},
-  year={Year of publication}
+@article{li2024synthesis,
+  title={Synthesis of electric vehicle charging data: A real-world data-driven approach},
+  author={Li, Zhi and Bian, Zilin and Chen, Zhibin and Ozbay, Kaan and Zhong, Minghui},
+  journal={Communications in Transportation Research},
+  volume={4},
+  pages={100128},
+  year={2024},
+  publisher={Elsevier}
 }
 </pre>
 
